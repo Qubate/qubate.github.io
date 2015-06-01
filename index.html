@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    body {
+      background-color: #3c374c;
+    }
+    .background {
+      background: url("img/background.jpg");
+      background-repeat: repeat;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      opacity: 0;
+      z-index: 2;
+      transition: all 1.5s ease;
+      -moz-transition: all 1.5s ease;
+      -o-transition: all 1.5s ease;
+      -webkit-transition: all 1.5s ease;
+      -ms-transition: all 1.5s ease;
+    }
+
+    .stripe {
+      background-color: #e83d59;
+      position: absolute;
+      top: 0;
+      bottom: 100%;
+      right: 50px;
+      width: 50px;
+      z-index: 1;
+      transition: all 1.5s ease;
+      -moz-transition: all 1.5s ease;
+      -o-transition: all 1.5s ease;
+      -webkit-transition: all 1.5s ease;
+      -ms-transition: all 1.5s ease;
+    }
+
+    .jumbotron {
+      background: url(img/jumbotron.png);
+      width: 851px;
+      height: 315px;
+      position: absolute;
+      left: calc(50% - 452px);
+      top: calc(50% - 180px);
+      margin-top: 30px;
+      opacity: 0;
+      transition: all 1.5s ease;
+      -moz-transition: all 1.5s ease;
+      -o-transition: all 1.5s ease;
+      -webkit-transition: all 1.5s ease;
+      -ms-transition: all 1.5s ease;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <title>Qubate - coming soon...</title>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="stripe"></div>
+  <div class="jumbotron"></div>
+
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function() {
+      $(".stripe").css("bottom", "0%");
+      
+      setTimeout(function() {
+        $(".jumbotron").css("opacity", "1");
+        $(".jumbotron").css("margin-top", 0);
+      }, 1500);
+
+      setTimeout(function() {
+        $(".background").css("opacity", "0.02");
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
